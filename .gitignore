@@ -1,0 +1,9 @@
+bin/
+obj/
+publish/
+staging/
+staging2/
+*.exe
+tools/ffmpeg.exe
+MicrosoftEdgeWebView2Setup.exe
+pack/app.7z
