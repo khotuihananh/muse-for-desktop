@@ -1,0 +1,43 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Replica chat — contenteditable composer</title>
+<style>body{font-family:sans-serif;background:#17171a;color:#eee} .msg{margin:6px;padding:6px;background:#232329;border-radius:8px} .msg img{max-width:200px;display:block} .chip img{max-width:120px}</style>
+<div id="msgs"></div>
+<form id="composerForm">
+  <div id="attachments"></div>
+  <div id="composer" contenteditable="true" style="border:1px solid #555;min-height:40px;padding:6px"></div>
+  <button id="sendBtn" type="button" aria-label="Send">Send</button>
+</form>
+<script>
+  var composer = document.getElementById('composer');
+  var attachments = document.getElementById('attachments');
+  var msgs = document.getElementById('msgs');
+  function send() {
+    var text = composer.innerText.trim();
+    var chips = attachments.querySelectorAll('img');
+    if (!text && chips.length === 0) return;
+    var d = document.createElement('div');
+    d.className = 'msg';
+    d.textContent = text;
+    chips.forEach(function (img) { var c = img.cloneNode(); d.appendChild(c); });
+    msgs.appendChild(d);
+    composer.innerHTML = '';
+    attachments.innerHTML = '';
+  }
+  composer.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); send(); }
+  });
+  document.getElementById('sendBtn').addEventListener('click', send);
+  composer.addEventListener('paste', function (e) {
+    var files = (e.clipboardData || {}).files || [];
+    for (var i = 0; i < files.length; i++) {
+      var chip = document.createElement('div');
+      chip.className = 'chip';
+      var img = document.createElement('img');
+      img.src = URL.createObjectURL(files[i]);
+      chip.appendChild(img);
+      attachments.appendChild(chip);
+    }
+    if (files.length) e.preventDefault();
+  });
+</script>

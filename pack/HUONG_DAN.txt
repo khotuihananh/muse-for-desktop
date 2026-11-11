@@ -1,0 +1,74 @@
+MUSE DESKTOP 1.6.4 — HUONG DAN NHANH
+====================================
+
+App boc trang muse.ai vao mot cua so desktop thuong tru.
+Ban 1.6.0: thanh cong cu gom 3 nut chup + 2 nut quay man hinh,
+moi nut gan duoc mot phim tat tuy chon, chup/quay xong dan thang
+vao o chat. Che do "nhan Enter de chup" (gan man hinh kieu Google)
+da GO HAN — Enter trong o chat hoat dong binh thuong nhu tren web.
+
+3 NUT CHUP TREN THANH CONG CU
+- Len .......... Khoanh mot vung tren man hinh (co che len WinLens:
+  man hinh lam toi xung quanh, vung khoanh trong veo, chip hien
+  kich thuoc pixel that), tha chuot la chup dung vung do va dan
+  vao o chat.
+- Man hinh 1 ... Chup toan bo man hinh 1, dan vao o chat.
+- Man hinh 2 ... Chup toan bo man hinh 2, dan vao o chat.
+Ca 3 deu la phim nong toan cuc: dang o app nao bam phim cung chay,
+app tu mang cua so Muse ra truoc va dan anh vao o chat.
+
+QUAY MAN HINH (BAN 1.6.0)
+- Nut "Quay 1" / "Quay 2": bam lan 1 bat dau quay toan bo man
+  hinh tuong ung; bam lan 2 (hoac bam lai dung nut do) dung quay,
+  video MP4 duoc dan thang vao o chat.
+- Trong luc quay, nut chuyen thanh "Dung mm:ss" dem thoi gian;
+  nut quay cua man hinh kia bi khoa (chi quay 1 man 1 luc).
+- Quay bang ffmpeg dong goi kem app (gdigrab + H.264), 30 fps.
+  Chi quay hinh, KHONG thu tieng.
+- File video giu lai tai %LocalAppData%\MuseDesktop\recordings,
+  ke ca sau khi da dan vao chat.
+- Phim tat cho 2 nut quay: mac dinh CHUA gan — tu gan trong menu
+  gan phim (chuot phai vao nut), vi du Ctrl+Alt+F9 / Ctrl+Alt+F10.
+
+GAN PHIM BAT KY CHO CAC NUT
+- Mac dinh: Len = Ctrl+Alt+V, Man hinh 1 = Ctrl+Alt+1,
+  Man hinh 2 = Ctrl+Alt+2.
+- Doi phim: CHUOT PHAI vao mot nut bat ky tren thanh cong cu (hoac
+  menu khay he thong > "Gan phim chup..."), bam nut Doi o dong tuong
+  ung roi go to hop phim muon dung.
+- Gan duoc CA MOT PHIM DON LE bat ky (ban 1.6.1). Chu y: phim
+  don le lam phim nong toan cuc se bi app giu o moi chuong trinh
+  — vi du gan chu A thi go chu A o noi khac se khong ra chu.
+- Cau hinh phim luu tai %LocalAppData%\MuseDesktop\hotkeys.json,
+  cac lan mo sau tu ap dung.
+- Alt+Space (an / hien cua so) giu co dinh, khong doi duoc.
+
+MENU CHUOT PHAI TRONG TRANG (BAN 1.6.4)
+- Chuot phai vao bat ky cho nao trong khung chat: menu rieng cua
+  app hien ra gom: 3 lenh chup, 2 lenh quay, gan phim, tai lai
+  trang, va muc an/hien thanh cong cu.
+- "An thanh cong cu (chi con khung chat)": an ca thanh cong cu
+  lan thanh trang thai — cua so chi con trang chat tran, KHONG
+  con dai hay chi tiet thua nao. Hien lai cung bang chinh menu
+  chuot phai nay (muc "Hien thanh cong cu"), hoac menu khay.
+- Thanh tieu de cua so da duoc lam toi mau (dark) theo app.
+- An giao dien khong anh huong phim nong: van chup bang phim duoc.
+
+PHIM VA KHAY HE THONG
+- Nut X tren cua so: chi an xuong khay (app van chay nen).
+- Khay he thong (click phai vao icon M): mo Muse / 3 lenh chup /
+  gan phim / an-hien thanh cong cu / tai lai trang / bat-tat khoi
+  dong cung Windows / thoat han.
+- Click dup vao icon khay: mo Muse.
+
+LAN DAU CHAY
+- Dang nhap tai khoan Meta mot lan trong cua so app, app se nho
+  dang nhap cho cac lan sau (du lieu luu tai
+  %LocalAppData%\MuseDesktop).
+
+GO CAI DAT
+- Settings > Apps > Muse Desktop > Uninstall.
+
+TIEU DE CUA SO
+- Tieu de ghi so phien ban (Muse Desktop 1.6.4) de chup anh la biet
+  ngay dang chay ban nao.

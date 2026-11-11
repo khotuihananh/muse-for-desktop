@@ -1,0 +1,81 @@
+<Window x:Class="MuseDesktop.HotkeyDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Gán phím chụp màn hình"
+        Width="440" SizeToContent="Height"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize" ShowInTaskbar="False"
+        Background="#1F1F23">
+    <StackPanel Margin="14">
+        <TextBlock Text="Bấm nút Đổi rồi gõ phím muốn dùng — một phím đơn lẻ bất kỳ cũng được. Lưu ý: phím đơn lẻ (ví dụ chữ A) sẽ bị app giữ ở mọi chương trình khi app đang chạy, gõ chữ đó ở nơi khác sẽ không ra chữ nữa."
+                   TextWrapping="Wrap" Foreground="#9A9AA3" FontSize="12" Margin="0,0,0,12" />
+
+        <Grid Margin="0,0,0,6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="58" />
+                <ColumnDefinition Width="58" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="🔍 Len" Foreground="#E8E8EA" FontSize="13" VerticalAlignment="Center" />
+            <TextBlock Grid.Column="1" x:Name="BindLens" Foreground="#E8E8EA" FontSize="13" VerticalAlignment="Center" />
+            <Button Grid.Column="2" x:Name="BtnSetLens" Content="Đổi" Margin="0,0,4,0" />
+            <Button Grid.Column="3" x:Name="BtnClearLens" Content="Xóa" />
+        </Grid>
+
+        <Grid Margin="0,0,0,6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="58" />
+                <ColumnDefinition Width="58" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="🖥 Màn hình 1" Foreground="#E8E8EA" FontSize="13" VerticalAlignment="Center" />
+            <TextBlock Grid.Column="1" x:Name="BindScreen1" Foreground="#E8E8EA" FontSize="13" VerticalAlignment="Center" />
+            <Button Grid.Column="2" x:Name="BtnSetScreen1" Content="Đổi" Margin="0,0,4,0" />
+            <Button Grid.Column="3" x:Name="BtnClearScreen1" Content="Xóa" />
+        </Grid>
+
+        <Grid Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="58" />
+                <ColumnDefinition Width="58" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="🖥 Màn hình 2" Foreground="#E8E8EA" FontSize="13" VerticalAlignment="Center" />
+            <TextBlock Grid.Column="1" x:Name="BindScreen2" Foreground="#E8E8EA" FontSize="13" VerticalAlignment="Center" />
+            <Button Grid.Column="2" x:Name="BtnSetScreen2" Content="Đổi" Margin="0,0,4,0" />
+            <Button Grid.Column="3" x:Name="BtnClearScreen2" Content="Xóa" />
+        </Grid>
+
+        <Grid Margin="0,0,0,6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="58" />
+                <ColumnDefinition Width="58" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="⏺ Quay màn 1" Foreground="#E8E8EA" FontSize="13" VerticalAlignment="Center" />
+            <TextBlock Grid.Column="1" x:Name="BindRec1" Foreground="#E8E8EA" FontSize="13" VerticalAlignment="Center" />
+            <Button Grid.Column="2" x:Name="BtnSetRec1" Content="Đổi" Margin="0,0,4,0" />
+            <Button Grid.Column="3" x:Name="BtnClearRec1" Content="Xóa" />
+        </Grid>
+
+        <Grid Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="58" />
+                <ColumnDefinition Width="58" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="⏺ Quay màn 2" Foreground="#E8E8EA" FontSize="13" VerticalAlignment="Center" />
+            <TextBlock Grid.Column="1" x:Name="BindRec2" Foreground="#E8E8EA" FontSize="13" VerticalAlignment="Center" />
+            <Button Grid.Column="2" x:Name="BtnSetRec2" Content="Đổi" Margin="0,0,4,0" />
+            <Button Grid.Column="3" x:Name="BtnClearRec2" Content="Xóa" />
+        </Grid>
+
+        <TextBlock x:Name="Hint" Text="" Foreground="#FFC46B" FontSize="12" TextWrapping="Wrap" Margin="0,0,0,10" />
+        <Button x:Name="BtnClose" Content="Đóng" HorizontalAlignment="Right" Padding="14,4" />
+    </StackPanel>
+</Window>

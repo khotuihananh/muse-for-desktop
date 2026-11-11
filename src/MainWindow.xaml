@@ -1,0 +1,79 @@
+<Window x:Class="MuseDesktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        Title="Muse"
+        Width="1180" Height="820"
+        MinWidth="640" MinHeight="480"
+        WindowStartupLocation="CenterScreen"
+        Icon="app.ico"
+        Background="#17171A">
+    <Window.Resources>
+        <!-- Rounded dark pill buttons for the toolbar (user, 2026-11-11:
+             the stock square light buttons looked cheap). The template
+             binds the Border background so hover/press states and the
+             recording tint set from code all show through. -->
+        <Style x:Key="ToolBtn" TargetType="Button">
+            <Setter Property="Foreground" Value="#EDEDF2" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Padding" Value="14,6" />
+            <Setter Property="Margin" Value="0,0,8,0" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Bd" CornerRadius="10"
+                                Background="#2C2C33" BorderBrush="#45454F" BorderThickness="1"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#3B3B45" />
+                                <Setter TargetName="Bd" Property="BorderBrush" Value="#5C5C6B" />
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Bd" Property="Background" Value="#222228" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="Bd" Property="Opacity" Value="0.45" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- When the toolbar is hidden the WebView fills the whole window:
+             no strip, no leftover chrome (user's v1.6.1 requirement). The
+             show/hide toggle lives in the page's right-click menu and in
+             the tray menu. -->
+        <Grid x:Name="ToolbarGrid" Grid.Row="0" Background="#1F1F23">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="10,7,0,7">
+                <Button x:Name="BtnLens" Content="🔍  Len" Style="{StaticResource ToolBtn}" />
+                <Button x:Name="BtnScreen1" Content="🖥  Màn hình 1" Style="{StaticResource ToolBtn}" />
+                <Button x:Name="BtnScreen2" Content="🖥  Màn hình 2" Style="{StaticResource ToolBtn}" />
+                <Button x:Name="BtnRec1" Content="⏺  Quay 1" Style="{StaticResource ToolBtn}" />
+                <Button x:Name="BtnRec2" Content="⏺  Quay 2" Style="{StaticResource ToolBtn}" Margin="0" />
+            </StackPanel>
+        </Grid>
+
+        <Grid x:Name="StatusGrid" Grid.Row="2" Background="#1F1F23">
+            <TextBlock x:Name="StatusText" Text="Đang khởi động…"
+                       Foreground="#9A9AA3" FontSize="11"
+                       VerticalAlignment="Center" Margin="10,3,0,3" />
+        </Grid>
+
+        <wv2:WebView2 x:Name="Web" Grid.Row="1" />
+        <TextBlock x:Name="FallbackText" Grid.Row="1" Visibility="Collapsed"
+                   Foreground="#E8E8EA" FontSize="14" TextWrapping="Wrap"
+                   Margin="24" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+</Window>
